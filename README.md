@@ -34,6 +34,8 @@ One Paragraph of project description goes here
     + run `go run cmd/cli/main.log.go`
 
 - `07`: Go backend: GIN vs VIPER
+    + install [viper](https://github.com/spf13/viper) `go get github.com/spf13/viper` : a complete configuration solution
+    + run `go run cmd/cli/viper/main.viper.go`
 
 - `08`: Go Backend: GIN vs MIDDLEWARES
 
