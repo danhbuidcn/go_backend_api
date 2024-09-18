@@ -1,9 +1,8 @@
 package controllers
 
 import (
-	"net/http"
-
 	"github.com/danhbuidcn/go_backend_api/internal/services"
+	"github.com/danhbuidcn/go_backend_api/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 
@@ -19,11 +18,6 @@ func NewUsersController() *UsersController {
 
 // controllers -> services -> repositories -> models -> dbs
 func (uc *UsersController) GetUserById(c *gin.Context) {
-	uid := c.Param("id")
-
-	c.JSON(http.StatusOK, gin.H{
-		"message": uc.userService.GetinfoUserService(),
-		"uid":     uid,
-		"users":   []string{"cr7", "m10"},
-	})
+	response.SuccessResponse(c, 2001, []string{"tipjs", "m10"})
+	// response.ErrorResponse(c, 2003, "error message")
 }
