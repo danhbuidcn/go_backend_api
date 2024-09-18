@@ -25,6 +25,7 @@ One Paragraph of project description goes here
     + run `go run cmd/server/main.go` and call `curl http://0.0.0.0:8002/v1/ping/1515\?uid='12313'`
 
 - 04: Go Backend: GIN vs MVC
+    + run `go run cmd/server/main.go` and call `curl http://0.0.0.0:8002/v1/user/1`
 
 - 05: Go Backend: GIN vs ERROR HANDLER
 
