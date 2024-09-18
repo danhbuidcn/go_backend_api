@@ -21,6 +21,8 @@ One Paragraph of project description goes here
     ```
 
 - 03: Go backend: GIN vs ROUTER
+    + install [gin web framework](https://github.com/gin-gonic/gin) `go get -u github.com/gin-gonic/gin`
+    + run `go run cmd/server/main.go` and call `curl http://0.0.0.0:8002/v1/ping/1515\?uid='12313'`
 
 - 04: Go Backend: GIN vs MVC
 
