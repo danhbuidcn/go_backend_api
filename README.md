@@ -38,6 +38,9 @@ One Paragraph of project description goes here
     + run `go run cmd/cli/viper/main.viper.go`
 
 - `08`: Go Backend: GIN vs MIDDLEWARES
+    + run `go run cmd/server/main.go` 
+    + call `curl http://0.0.0.0:8002/v1/ping/1515\?uid='12313'`
+    + call `curl -H "Authorization: valid-token" http://0.0.0.0:8002/v1/user/1`
 
 - `09`: Go Backend: GIN vs TEST MOCK
 
