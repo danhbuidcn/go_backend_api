@@ -1,22 +1,11 @@
 server:
   port: 8002
-database:
-  - user: admin
-    password: admin
-    host: localhost
-    dbName: db
-  - user: root
-    password: root
-    host: localhost
-    dbName: order
-sercurity:
-  jwt:
-    key: value123
-redis:
-  user: admin
-elasticsearch:
-  user: admin
-rabbitMQ:
-  user: admin
-kafka:
-  user: admin
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  username: root
+  password: root
+  dbname: shopdevgo
+  maxIdleConns: 10 # sets the maximum number of idle connections in the pool.
+  maxOpenConns: 100 # sets the maximum number of open connections to the database.
+  connMaxLifetime: 3600 # sets the maximum amount of time a connection can be reused before being closed.

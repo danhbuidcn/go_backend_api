@@ -54,6 +54,7 @@ One Paragraph of project description goes here
     ```
 
 - `10`: Go Backend: Cấu trúc file main.go cho DỰ ÁN LỚN
+    + run `go run cmd/server/main.go` 
 
 - `11`: Go Backend: QUẢN LÝ LOGs CHO DỰ ÁN LỚN
 
