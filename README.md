@@ -43,6 +43,15 @@ One Paragraph of project description goes here
     + call `curl -H "Authorization: valid-token" http://0.0.0.0:8002/v1/user/1`
 
 - `09`: Go Backend: GIN vs TEST MOCK
+    + run `go get github.com/stretchr/testify` or `go mod tidy`
+    + run test
+    ```
+    cd tests/basic
+    go test --v --coverprofile=coverage.out
+    // OR
+    go tool cover --html=coverage.out -o coverage.html
+    open coverage.html
+    ```
 
 - `10`: Go Backend: Cấu trúc file main.go cho DỰ ÁN LỚN
 
