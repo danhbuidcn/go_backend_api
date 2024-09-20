@@ -57,6 +57,8 @@ One Paragraph of project description goes here
     + run `go run cmd/server/main.go` 
 
 - `11`: Go Backend: QUẢN LÝ LOGs CHO DỰ ÁN LỚN
+    + run `go get gopkg.in/natefinch/lumberjack.v2`
+    + `make run`
 
 - `12`: Go Backend: Làm việc với Mysql Pool, Tại sao lại là Pool
 

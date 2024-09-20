@@ -9,3 +9,10 @@ mysql:
   maxIdleConns: 10 # sets the maximum number of idle connections in the pool.
   maxOpenConns: 100 # sets the maximum number of open connections to the database.
   connMaxLifetime: 3600 # sets the maximum amount of time a connection can be reused before being closed.
+logger:
+  log_level: debug
+  file_log_name: "./storages/logs/dev.001.log"
+  max_size: 500 # megabytes
+  max_backups: 3
+  max_age: 28  # days
+  compress: true # disabled by default
