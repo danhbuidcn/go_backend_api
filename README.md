@@ -80,6 +80,7 @@ One Paragraph of project description goes here
 
 - `13`: Go Backend: Làm việc với [Redis sentinel, cluster](https://github.com/redis/go-redis), Tại sao lại là Sentinel
     + install redis `go get github.com/redis/go-redis/v9`
+    + install debugging `go install github.com/go-delve/delve/cmd/dlv@latest`
 
 - `14`: Go Backend: Router cho TEAM LỚN
 

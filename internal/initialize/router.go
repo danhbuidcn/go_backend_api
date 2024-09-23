@@ -1,45 +1,40 @@
 package initialize
 
 import (
-	"fmt"
-
-	c "github.com/danhbuidcn/go_backend_api/internal/controllers"
-	"github.com/danhbuidcn/go_backend_api/internal/middlerwares"
+	"github.com/danhbuidcn/go_backend_api/global"
+	"github.com/danhbuidcn/go_backend_api/internal/routers"
 	"github.com/gin-gonic/gin"
 )
 
-func AA() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		fmt.Println("Before ->> AA")
-		c.Next()
-		fmt.Println("Alter ->> AA")
-	}
-}
-
-func BB() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		fmt.Println("Before ->> BB")
-		c.Next()
-		fmt.Println("Alter ->> BB")
-	}
-}
-
-func CC(c *gin.Context) {
-	fmt.Println("Before ->> CC")
-	c.Next()
-	fmt.Println("Alter ->> CC")
-}
-
 func InitRouter() *gin.Engine {
-	r := gin.Default()
-	// use the middlerware
-	// r.Use(AA(), BB(), CC)
-	r.Use(middlerwares.AuthenMiddleware(), BB(), CC)
+	// r := gin.Default()
+	var r *gin.Engine
+	if global.Config.Server.Mode == "dev" {
+		gin.SetMode(gin.DebugMode)
+		gin.ForceConsoleColor()
+		r = gin.Default()
+	} else {
+		gin.SetMode(gin.ReleaseMode)
+		r = gin.New()
+	}
+	// midderware
+	// r.Use() // logging
+	// r.Use() // cross
+	// r.Use() // limiter global
+	managerRouter := routers.RouterGroupApp.Manager
+	userRouter := routers.RouterGroupApp.User
 
-	v1 := r.Group("v1")
+	MainGroup := r.Group("/v1")
 	{
-		v1.GET("/ping/:name", c.NewPongController().Pong)
-		v1.GET("/user/:id", c.NewUsersController().GetUserById)
+		MainGroup.GET("/check_status") // tracking monitor
+	}
+	{
+		managerRouter.IntitUserRouter(MainGroup)
+		managerRouter.IntitAdminRouter(MainGroup)
+	}
+	{
+		userRouter.IntitUserRouter(MainGroup)
+		userRouter.IntitProductRouter(MainGroup)
 	}
 	return r
 }

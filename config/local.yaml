@@ -1,5 +1,6 @@
 server:
   port: 8002
+  mode: "dev"
 mysql:
   host: 127.0.0.1
   port: 3308
