@@ -11,6 +11,7 @@
 │   ├── middlewares          # Middlewares for request handling (logging, auth, etc.)
 │   ├── models               # Data models (structs) representing database tables
 │   ├── repositories         # Data access layer (repository pattern)
+│   ├── po                   # The Persistent Object (PO) folder holds objects representing database records for data storage and retrieval.
 │   ├── routers              # Defines API routes and their handlers
 │   └── services             # Business logic and data processing services
 ├── Makefile                 # Manages build, run, test tasks using Makefile

@@ -61,6 +61,22 @@ One Paragraph of project description goes here
     + `make run`
 
 - `12`: Go Backend: Làm việc với Mysql Pool, Tại sao lại là Pool
+    + run `go get -u gorm.io/gorm` [gorm package](https://gorm.io/docs/)
+    + run `go get github.com/google/uuid`
+    + setup docker mysql 
+    ```
+    docker-compose up -d
+    docker exec -it mysql_shopdevgo bash
+        # mysql -u root -proot
+            > use shopdevgo
+            > show tables;
+            > desc go_db_user;
+    ```
+    + run [benchmark](https://blog.logrocket.com/benchmarking-golang-improve-function-performance/)
+    ```
+    cd tests/benchmark
+    go test -bench=. -benchmem -count 5
+    ```
 
 - `13`: Go Backend: Làm việc với Redis sentinel, cluster, Tại sao lại là Sentinel
 
@@ -77,3 +93,12 @@ One Paragraph of project description goes here
 - `19`: Go Backend: Triển khai BlackList IP, WhiteList IP cho hệ thống api
 
 - `20`: Go Backend: User-Register: Send OTP, VerifyOTP, BLock IP Spam...
+
+## Resource
+
+- [Con đường Lập Trình Viên](https://www.youtube.com/playlist?list=PLw0w5s5b9NK5fDx409WXgT06Zm4P83yiA)
+- [Go - Con đường lập trình](https://www.youtube.com/playlist?list=PL0Pnqmz-onB5Xk2o46BpvGHa-c8Toe0YP)
+- [Database](https://www.youtube.com/playlist?list=PLw0w5s5b9NK6EOfWmhaoGK9Jjih3CzR6c)
+- [Series Phỏng Vấn](https://www.youtube.com/playlist?list=PLw0w5s5b9NK5xE6lmH85ge8dFXHheYV2o)
+- [Message Queue](https://www.youtube.com/playlist?list=PLw0w5s5b9NK4yji-f3c3L7htTJjiyhRDa)
+- [See more](https://www.youtube.com/@anonystick/playlists)

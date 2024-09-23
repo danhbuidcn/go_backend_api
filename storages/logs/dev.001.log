@@ -2,3 +2,7 @@
 {"level":"INFO","time":"2024-09-20T14:20:37.536+0700","caller":"initialize/run.go:15","msg":"config log ok","ok":"success"}
 {"level":"INFO","time":"2024-09-20T14:24:33.114+0700","caller":"initialize/run.go:15","msg":"config log ok","ok":"success"}
 {"level":"DEBUG","time":"2024-09-20T14:26:03.151+0700","caller":"initialize/run.go:15","msg":"config log ok","ok":"success"}
+{"level":"DEBUG","time":"2024-09-23T11:09:26.582+0700","caller":"initialize/run.go:15","msg":"config log ok","ok":"success"}
+{"level":"INFO","time":"2024-09-23T11:09:26.589+0700","caller":"initialize/mysql.go:31","msg":"Initializing MySQL Successfully"}
+{"level":"DEBUG","time":"2024-09-23T13:37:48.271+0700","caller":"initialize/run.go:15","msg":"config log ok","ok":"success"}
+{"level":"INFO","time":"2024-09-23T13:37:48.272+0700","caller":"initialize/mysql.go:35","msg":"MySQL Initialized Successfully"}
