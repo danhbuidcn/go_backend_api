@@ -78,7 +78,8 @@ One Paragraph of project description goes here
     go test -bench=. -benchmem -count 5
     ```
 
-- `13`: Go Backend: Làm việc với Redis sentinel, cluster, Tại sao lại là Sentinel
+- `13`: Go Backend: Làm việc với [Redis sentinel, cluster](https://github.com/redis/go-redis), Tại sao lại là Sentinel
+    + install redis `go get github.com/redis/go-redis/v9`
 
 - `14`: Go Backend: Router cho TEAM LỚN
 

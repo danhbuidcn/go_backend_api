@@ -12,5 +12,16 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
+  redis:
+    image: redis:latest
+    container_name: redis_shopdevgo
+    command: ["redis-server", "--port", "6381"] # Run Redis on port 6381
+    ports:
+      - "6381:6381"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped # Make sure Redis restarts itself if there is an error
+
 volumes:
   mysql_data:
+  redis_data:

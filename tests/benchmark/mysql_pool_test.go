@@ -49,6 +49,7 @@ func BenchmarkMaxOpenConns(b *testing.B) {
 
 	// set connection arguments
 	sqlDB.SetMaxOpenConns(10)
+	// Ensure the DB connection is closed when the function exits
 	defer sqlDB.Close()
 	b.RunParallel(func(pb *testing.PB) {
 		for pb.Next() {
@@ -57,4 +58,5 @@ func BenchmarkMaxOpenConns(b *testing.B) {
 	})
 }
 
+// Using defer sqlDB.Close() right after opening the connection is a safer and more convenient approach to ensure resources are released, avoiding connection leaks, and aligning with Go's best practices.
 // Benchmark in Go is the process of measuring code performance to determine execution speed, resource usage, or optimize code, using the testing package with functions prefixed by Benchmark.
