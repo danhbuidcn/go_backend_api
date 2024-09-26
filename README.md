@@ -84,7 +84,26 @@ One Paragraph of project description goes here
 
 - `14`: Go Backend: Router cho TEAM LỚN
 
-- `15`: Go Kafka Backend: Kafka thực hành về mua bán cổ phiếu với các tình huống
+- `15`: Go Kafka Backend: Kafka thực hành về mua bán cổ phiếu với các tình huống (xem [Kafka section](#kafka-section))
+    + installation [kafka](https://github.com/segmentio/kafka-go): `go get -u github.com/segmentio/kafka-go`
+    + run
+    ```
+    docker-compose up -d
+    go run cmd/cli/kafka/kafka.go
+    curl -X POST "http://127.0.0.1:8999/action/stock?msg=HPG&type=MUA"
+
+    // create topic
+    docker exec -it broker kafka-topics --create --topic user_topic_001 --bootstrap-server broker:9091 --partitions 3 --replication-factor 1
+    docker exec -it broker kafka-topics --bootstrap-server broker:9091 --list
+
+    // list consumer group
+    docker exec -it broker kafka-consumer-groups --bootstrap-server broker:9091 --list
+
+    // ensure JMX is opening
+    docker exec -it kafka-ui /bin/sh
+    nc -vz broker 19101
+    ```
+    + access `http://localhost:8080/`
 
 - `16`: Go Interview: Không sử dụng Interface có được không? ĐƯỢC vs MẤT khi không sử dụng?
 
@@ -104,3 +123,17 @@ One Paragraph of project description goes here
 - [Series Phỏng Vấn](https://www.youtube.com/playlist?list=PLw0w5s5b9NK5xE6lmH85ge8dFXHheYV2o)
 - [Message Queue](https://www.youtube.com/playlist?list=PLw0w5s5b9NK4yji-f3c3L7htTJjiyhRDa)
 - [See more](https://www.youtube.com/@anonystick/playlists)
+
+## Kafka section
+
+- `01: kafka dùng khi nào ?`[Kafka đã thay đổi hệ thống eCommerce trở nên mạnh mẽ như thế nào so với cách cũ](https://www.youtube.com/watch?v=yK4T7Myi9N4)
+- `02: kafka có 7 mấu chốt`[Kafka: Đây là 7 thứ đủ để bắt đầu cuộc chiến TOPIC, PARTITIONs và Consumer Group](https://www.youtube.com/watch?v=a7lmP5hdgB0)
+- `03: kafka vs stocks`[Kafka: Ứng dụng thực tế hệ thống MUA BÁN Backend API](https://www.youtube.com/watch?v=UIFWVisug1M&t=3s)
+
+## gRPC
+
+- [Cách sử dụng gRPC: Triển khai Order Service Go, Java! Độ trễ gần như KHÔNG CÓ](https://www.youtube.com/watch?v=x5ZVWiJIuSM)
+
+## Packages usefull
+
+- [godepgraph](https://github.com/alovn/godepgraph?tab=readme-ov-file)
