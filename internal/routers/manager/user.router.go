@@ -5,6 +5,11 @@ import "github.com/gin-gonic/gin"
 type UserRouter struct{}
 
 func (pr *UserRouter) IntitUserRouter(Router *gin.RouterGroup) {
+	// public router
+	userRouterPucblic := Router.Group("/admin/user")
+	{
+		userRouterPucblic.POST("/register")
+	}
 	// private router
 	userRouterPrivate := Router.Group("/admin/user")
 	// userRouterPrivate.Use(Limiter())

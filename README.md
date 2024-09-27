@@ -117,6 +117,26 @@ One Paragraph of project description goes here
 
 - `20`: Go Backend: User-Register: Send OTP, VerifyOTP, BLock IP Spam...
 
+- `21`: Go Backend: Chiến đấu với Docker Link, Docker Compose build Project Level 2, 3, 4
+
+- `BONUS`: Go Backend: Đồng bộ dữ liệu Mysql to Kafka sử dụng Debezium với N Tables tốc độ REALTIME
+
+- `22`: Go Backend: Tại sao nhiều công ty lại sử dụng SQLC
+
+- `23`: Go Backend: Từ khi sử dụng GOOSE tốc độ làm việc Database nhanh gấp đôi
+
+- `24`: Go Backend: Triển khai quy trình send OTP cho User Registration
+
+- `25`: Go Backend: Đến lúc chia tay GORM vì sao?
+
+- `26`: Go Backend: TEAM JAVA hỗ trợ send OTP cho TEAM GO
+
+- `27`: Go Backend: Đến lúc làm việc với Kafka
+
+- `28`: Go Backend: Quyết định refactor interface sau khi nhìn lén code đồng nghiệp
+
+- `29`: Go Backend: Đến lúc trở thành Senior và làm việc với makefile, diagram mysql
+
 ## Resource
 
 - [Con đường Lập Trình Viên](https://www.youtube.com/playlist?list=PLw0w5s5b9NK5fDx409WXgT06Zm4P83yiA)
@@ -131,6 +151,7 @@ One Paragraph of project description goes here
 - `01: kafka dùng khi nào ?`[Kafka đã thay đổi hệ thống eCommerce trở nên mạnh mẽ như thế nào so với cách cũ](https://www.youtube.com/watch?v=yK4T7Myi9N4)
 - `02: kafka có 7 mấu chốt`[Kafka: Đây là 7 thứ đủ để bắt đầu cuộc chiến TOPIC, PARTITIONs và Consumer Group](https://www.youtube.com/watch?v=a7lmP5hdgB0)
 - `03: kafka vs stocks`[Kafka: Ứng dụng thực tế hệ thống MUA BÁN Backend API](https://www.youtube.com/watch?v=UIFWVisug1M&t=3s)
+- `04: sync data from mysql to kafka` [KỸ SƯ CAO CẤP: Cách đồng bộ dữ liệu Mysql to Kafka sử dụng Debezium với N Tables tốc độ REALTIME](https://www.youtube.com/watch?v=KqLzls2xCnQ&t=291s)
 
 ## gRPC
 
@@ -138,4 +159,4 @@ One Paragraph of project description goes here
 
 ## Packages usefull
 
-- [godepgraph](https://github.com/alovn/godepgraph?tab=readme-ov-file)
+- [godepgraph](https://github.com/alovn/godepgraph?tab=readme-ov-file): godepgraph is a packages dependency graph visualization tool for your local go module project.

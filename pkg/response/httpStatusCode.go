@@ -5,6 +5,8 @@ const (
 	ErrorCodeParamInvalid = 2003 // params is invalid
 
 	ErrorInvalidToken = 3001 // token is invalid
+	// Register Code
+	ErrCodeUserHasExists = 5001 // user has already registered
 )
 
 // message
@@ -12,4 +14,6 @@ var msg = map[int]string{
 	ErrorCodeSuccess:      "success",
 	ErrorCodeParamInvalid: "param is invalid",
 	ErrorInvalidToken:     "token is invalid",
+
+	ErrCodeUserHasExists: "user has already registerd",
 }
