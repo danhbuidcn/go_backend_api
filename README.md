@@ -106,6 +106,8 @@ One Paragraph of project description goes here
     + access `http://localhost:8080/`
 
 - `16`: Go Interview: Không sử dụng Interface có được không? ĐƯỢC vs MẤT khi không sử dụng?
+    + [Interface In Go](https://gobyexample.com/interfaces)
+    + [Interfaces in Go (part I)](https://medium.com/golangspec/interfaces-in-go-part-i-4ae53a97479c)
 
 - `17`: Go Backend: Interface cách triển khai nếu bạn là member
 
