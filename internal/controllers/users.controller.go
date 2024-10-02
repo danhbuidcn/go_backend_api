@@ -10,7 +10,7 @@ import (
 // 	userService *services.UserService
 // }
 
-// func NewUsersController() *UsersController {
+// func NewUserController() *UsersController {
 // 	return &UsersController{
 // 		userService: services.NewUserService(),
 // 	}
@@ -28,7 +28,7 @@ type UsersController struct {
 	userService services.IUserService
 }
 
-func NewUsersController(userService services.IUserService) *UsersController {
+func NewUserController(userService services.IUserService) *UsersController {
 	return &UsersController{
 		userService: userService,
 	}

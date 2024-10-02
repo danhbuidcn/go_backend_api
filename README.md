@@ -112,30 +112,17 @@ One Paragraph of project description goes here
 - `17`: Go Backend: Interface cách triển khai nếu bạn là member
 
 - `18`: Go Backend: Nói về Dependency Injection và sủ dụng Wire trong dự án
-
-- `19`: Go Backend: Triển khai BlackList IP, WhiteList IP cho hệ thống api
-
-- `20`: Go Backend: User-Register: Send OTP, VerifyOTP, BLock IP Spam...
-
-- `21`: Go Backend: Chiến đấu với Docker Link, Docker Compose build Project Level 2, 3, 4
-
-- `BONUS`: Go Backend: Đồng bộ dữ liệu Mysql to Kafka sử dụng Debezium với N Tables tốc độ REALTIME
-
-- `22`: Go Backend: Tại sao nhiều công ty lại sử dụng SQLC
-
-- `23`: Go Backend: Từ khi sử dụng GOOSE tốc độ làm việc Database nhanh gấp đôi
-
-- `24`: Go Backend: Triển khai quy trình send OTP cho User Registration
-
-- `25`: Go Backend: Đến lúc chia tay GORM vì sao?
-
-- `26`: Go Backend: TEAM JAVA hỗ trợ send OTP cho TEAM GO
-
-- `27`: Go Backend: Đến lúc làm việc với Kafka
-
-- `28`: Go Backend: Quyết định refactor interface sau khi nhìn lén code đồng nghiệp
-
-- `29`: Go Backend: Đến lúc trở thành Senior và làm việc với makefile, diagram mysql
+    + `Inversion of Control (Ioc)`: 
+        [LINK 1](https://stackoverflow.com/questions/3058/what-is-inversion-of-control),
+        [LINK 2](https://martinfowler.com/bliki/InversionOfControl.html)
+    + `Dependency Injection (DI)`
+    + [wire](https://github.com/google/wire) :
+        ```
+        go install github.com/google/wire/cmd/wire@latest
+        go get github.com/google/wire/cmd/wire
+        cd internal/wire/
+        wire
+        ```
 
 ## Resource
 

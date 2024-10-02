@@ -1,9 +1,7 @@
 package user
 
 import (
-	"github.com/danhbuidcn/go_backend_api/internal/controllers"
-	"github.com/danhbuidcn/go_backend_api/internal/repositories"
-	"github.com/danhbuidcn/go_backend_api/internal/services"
+	"github.com/danhbuidcn/go_backend_api/internal/wire"
 	"github.com/gin-gonic/gin"
 )
 
@@ -12,15 +10,15 @@ type UserRouter struct{}
 func (pr *UserRouter) IntitUserRouter(Router *gin.RouterGroup) {
 	// publish router
 	// this is non-dependency
-	ur := repositories.NewUserRepoSitory()
-	us := services.NewUserService(ur)
-	userHanderNonDenpency := controllers.NewUsersController(us)
-
+	// ur := repositories.NewUserRepoSitory()
+	// us := services.NewUserService(ur)
+	// userHanderNonDenpency := controllers.NewUserController(us)
+	userController, _ := wire.InitUserRouterHandler()
 	// WIRE go
 	// Dependency Injection (DI)
 	userRouterPublic := Router.Group("/user")
 	{
-		userRouterPublic.POST("/register", userHanderNonDenpency.Register)
+		userRouterPublic.POST("/register", userController.Register)
 		userRouterPublic.POST("/otp")
 	}
 	// private router
