@@ -4,14 +4,14 @@ import "github.com/gin-gonic/gin"
 
 type AdminRouter struct{}
 
-func (pr *AdminRouter) IntitAdminRouter(Router *gin.RouterGroup) {
+func (pr *AdminRouter) InitAdminRouter(Router *gin.RouterGroup) {
 	// publish router
 	adminRouterPublic := Router.Group("/admin")
 	{
 		adminRouterPublic.POST("/login")
 	}
 	// private router
-	adminRouterPrivate := Router.Group("/admin/user")
+	adminRouterPrivate := Router.Group("/admin")
 	// userRouterPrivate.Use(Limiter())
 	// userRouterPrivate.Use(Authen())
 	// userRouterPrivate.Use(Permission())

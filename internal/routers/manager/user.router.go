@@ -4,7 +4,7 @@ import "github.com/gin-gonic/gin"
 
 type UserRouter struct{}
 
-func (pr *UserRouter) IntitUserRouter(Router *gin.RouterGroup) {
+func (pr *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	// public router
 	userRouterPucblic := Router.Group("/admin/user")
 	{

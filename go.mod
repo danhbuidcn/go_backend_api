@@ -4,17 +4,26 @@ go 1.23.1
 
 require (
 	github.com/gin-gonic/gin v1.10.0
-	github.com/google/uuid v1.4.0
+	github.com/google/uuid v1.6.0
 	github.com/redis/go-redis/v9 v9.6.1
 	github.com/spf13/viper v1.19.0
 	github.com/stretchr/testify v1.9.0
 	go.uber.org/zap v1.27.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	gorm.io/driver/mysql v1.5.7
+	gorm.io/gen v0.3.26
 	gorm.io/gorm v1.25.12
 )
 
-require github.com/google/go-cmp v0.6.0 // indirect
+require (
+	filippo.io/edwards25519 v1.1.0 // indirect
+	golang.org/x/mod v0.21.0 // indirect
+	golang.org/x/sync v0.8.0 // indirect
+	golang.org/x/tools v0.25.0 // indirect
+	gorm.io/datatypes v1.2.2 // indirect
+	gorm.io/hints v1.1.2 // indirect
+	gorm.io/plugin/dbresolver v1.5.3 // indirect
+)
 
 require (
 	github.com/bytedance/sonic v1.12.2 // indirect
@@ -30,7 +39,7 @@ require (
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.22.1 // indirect
-	github.com/go-sql-driver/mysql v1.7.0 // indirect
+	github.com/go-sql-driver/mysql v1.8.1 // indirect
 	github.com/goccy/go-json v0.10.3 // indirect
 	github.com/google/wire v0.6.0
 	github.com/hashicorp/hcl v1.0.0 // indirect

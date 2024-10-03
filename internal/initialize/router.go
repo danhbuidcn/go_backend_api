@@ -29,12 +29,12 @@ func InitRouter() *gin.Engine {
 		MainGroup.GET("/check_status") // tracking monitor
 	}
 	{
-		managerRouter.IntitUserRouter(MainGroup)
-		managerRouter.IntitAdminRouter(MainGroup)
+		managerRouter.InitUserRouter(MainGroup)
+		managerRouter.InitAdminRouter(MainGroup)
 	}
 	{
-		userRouter.IntitUserRouter(MainGroup)
-		userRouter.IntitProductRouter(MainGroup)
+		userRouter.InitUserRouter(MainGroup)
+		userRouter.InitProductRouter(MainGroup)
 	}
 	return r
 }

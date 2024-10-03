@@ -4,7 +4,7 @@ import "github.com/gin-gonic/gin"
 
 type ProductRouter struct{}
 
-func (pr *ProductRouter) IntitProductRouter(Router *gin.RouterGroup) {
+func (pr *ProductRouter) InitProductRouter(Router *gin.RouterGroup) {
 	// publish router
 	productRouterPublic := Router.Group("/product")
 	{

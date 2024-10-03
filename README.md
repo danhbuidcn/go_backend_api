@@ -124,6 +124,43 @@ One Paragraph of project description goes here
         wire
         ```
 
+- `19`: Migrating Schema with GORM to MYSQL and DUMP Database
+    + mysql command to go model
+    ```sql
+    -- db up
+    DROP TABLE IF EXISTS `go_crm_user`;
+    -- new
+    CREATE TABLE `go_crm_user` (
+    `usr_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'Account ID',
+    `usr_email` varchar(30) NOT NULL DEFAULT '' COMMENT 'Email',
+    `usr_phone` varchar(15) NOT NULL DEFAULT '' COMMENT 'Phone Number',
+    `usr_username` varchar(30) NOT NULL DEFAULT '' COMMENT 'Username',
+    `usr_password` varchar(32) NOT NULL DEFAULT '' COMMENT 'Password',
+    `usr_created_at` int NOT NULL DEFAULT '0' COMMENT 'Creation Time',
+    `usr_updated_at` int NOT NULL DEFAULT '0' COMMENT 'Update Time',
+    `usr_create_ip_at` varchar(12) NOT NULL DEFAULT '' COMMENT 'Creation IP',
+    `usr_last_login_at` int NOT NULL DEFAULT '0' COMMENT 'Last Login Time',
+    `usr_last_login_ip_at` varchar(12) NOT NULL DEFAULT '' COMMENT 'Last Login IP',
+    `usr_login_times` int NOT NULL DEFAULT '0' COMMENT 'Login Times',
+    `usr_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Status 1:enable, 0:disable, -1:deleted',
+    PRIMARY KEY (`usr_id`),
+    KEY `idx_email` (`usr_email`),
+    KEY `idx_phone` (`usr_phone`),
+    KEY `idx_username` (`usr_username`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Account';
+
+    DESC go_crm_user;
+    ```
+    + [gen in gorm](https://gorm.io/gen/index.html):
+    ```
+    docker-compose up
+    go get -u gorm.io/gen
+    make run
+
+    // command to export database to .sql file
+    docker exec -it mysql_shopdevgo mysqldump -uroot -proot --databases shopdevgo --add-drop-database --add-drop-table --add-drop-trigger --add-locks --no-data > migrations/shopdevgo.sql
+    ```
+
 ## Resource
 
 - [Con đường Lập Trình Viên](https://www.youtube.com/playlist?list=PLw0w5s5b9NK5fDx409WXgT06Zm4P83yiA)

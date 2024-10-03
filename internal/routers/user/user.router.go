@@ -7,7 +7,7 @@ import (
 
 type UserRouter struct{}
 
-func (pr *UserRouter) IntitUserRouter(Router *gin.RouterGroup) {
+func (pr *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	// publish router
 	// this is non-dependency
 	// ur := repositories.NewUserRepoSitory()
