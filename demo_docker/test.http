@@ -1,0 +1,8 @@
+###
+GET http://localhost:8080/ping
+
+###
+GET http://localhost:8005/ping
+
+###
+GET http://localhost:8004/ping

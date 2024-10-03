@@ -4,7 +4,8 @@ One Paragraph of project description goes here
 
 ## Getting Started
 
-[course](https://github.com/danhbuidcn/go_backend_api)
+[Course - Go Backend Architecture](https://www.youtube.com/playlist?list=PLw0w5s5b9NK6qiL9Xzki-mGbq_V8dBQkY)
+
 
 ## Series Backend eCommerce GOLANG (Redis, mysql, elasticSearch, kafak, nginx, mongodb...)
 
@@ -152,7 +153,7 @@ One Paragraph of project description goes here
     DESC go_crm_user;
     ```
     + [gen in gorm](https://gorm.io/gen/index.html):
-    ```
+    ```bash
     docker-compose up
     go get -u gorm.io/gen
     make run
@@ -160,6 +161,21 @@ One Paragraph of project description goes here
     // command to export database to .sql file
     docker exec -it mysql_shopdevgo mysqldump -uroot -proot --databases shopdevgo --add-drop-database --add-drop-table --add-drop-trigger --add-locks --no-data > migrations/shopdevgo.sql
     ```
+
+- `20`: Chiến đấu DOCKER, sai lầm cách build này Level 0, 1
+    + comand : [gin](https://github.com/gin-gonic/gin)
+    ```bash
+    cd demo_docker
+    go mod init example.com/demo_docker
+    touch main.go
+    touch Dockerfile
+    go get -u github.com/gin-gonic/gin
+    touch test.http
+    go run .
+
+    GET http://localhost:8080/ping
+    ```
+    + build Dockerfile from [hub.docker](https://hub.docker.com/_/golang/tags?name=alpine)
 
 ## Resource
 
