@@ -1,6 +1,6 @@
 # Project go_backend_api
 
-One Paragraph of project description goes here
+Golang Programming Course with Real Project CRM  eCommerce
 
 ## Getting Started
 
@@ -191,7 +191,18 @@ One Paragraph of project description goes here
 
     docker start backend_shopdevgo # star backend_api if it's unhealthy
     ```
-- `22`: Công ty đề nghị chuyển GORM sang SQLC như thế nào?
+- `22`: Công ty đề nghị chuyển [GORM](https://gorm.io/index.html) sang [SQLC](https://sqlc.dev/) như thế nào?
+    + command
+    ```bash
+    go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+    cd sqlc_practice
+    sqlc generate
+    go run cmd/main.go
+    ```
+
+- `23`: Goose (A database migration tool) hiệu suất cao của dân BACKEND
+
+- `24`: [User Register Send OTP To Email Template](https://backend.anonystick.com/golang/go-24.html)
 
 ## Resource
 
