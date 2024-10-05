@@ -2,8 +2,8 @@ server:
   port: 8002
   mode: "dev"
 mysql:
-  host: 127.0.0.1
-  port: 3308
+  host: mysql_shopdevgo #127.0.0.1
+  port: 3306
   username: root
   password: root
   dbname: shopdevgo
@@ -18,7 +18,7 @@ logger:
   max_age: 28  # days
   compress: true # disabled by default
 redis:
-  host: 127.0.0.1
+  host: redis_shopdevgo # 127.0.0.1
   port: 6381
   password: # no pw set
   db: 0 # use default db

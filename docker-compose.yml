@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mysql:
-    image: mysql:latest
+    image: mysql:8.0
     container_name: mysql_shopdevgo
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -11,16 +11,43 @@ services:
       - '3308:3306'
     volumes:
       - mysql_data:/var/lib/mysql
+    networks:
+      - shopdev_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   redis:
-    image: redis:latest
+    image: redis:7.4
     container_name: redis_shopdevgo
     command: ['redis-server', '--port', '6381']
     ports:
-      - '6381:6381'
+      - '6381:6379'
     volumes:
       - redis_data:/data
     restart: unless-stopped # Auto-restart Redis on failure
+    networks:
+      - shopdev_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "-p", "6381", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  backend_api:
+    build: .
+    container_name: backend_shopdevgo
+    ports:
+      - '8002:8002'
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - shopdev_network
+    stdin_open: true
+    tty: true
 
   # zookeeper:
   #   platform: linux/amd64
@@ -47,6 +74,8 @@ services:
   #     driver: 'json-file'
   #     options:
   #       max-size: '1m'
+  #   networks:
+  #     - shopdev_network
 
   # kafka-ui: 
   #   container_name: kafka-ui 
@@ -65,6 +94,8 @@ services:
   #     driver: 'json-file'
   #     options:
   #       max-size: '1m'
+  #   networks:
+  #     - shopdev_network
 
   # broker:
   #   platform: linux/amd64
@@ -93,8 +124,13 @@ services:
   #     - broker_data:/var/lib/kafka/data
   #     - ./jmxremote.password:/usr/lib/jvm/zulu11-ca/conf/management/jmxremote.password
   #     - ./jmxremote.access:/usr/lib/jvm/zulu11-ca/conf/management/jmxremote.access
+  #   networks:
+  #     - shopdev_network
 
 volumes:
   mysql_data:
   redis_data:
   # broker_data:
+
+networks:
+  shopdev_network:

@@ -177,6 +177,22 @@ One Paragraph of project description goes here
     ```
     + build Dockerfile from [hub.docker](https://hub.docker.com/_/golang/tags?name=alpine)
 
+- `21`: Chiến đấu với Docker Link, Docker Compose build Project Level 2
+    + build go with docker and link to mysql container
+    ```bash
+    docker-compose up -d # run mysql container
+
+    docker build . -t backend_api # build go project
+    docker network connect bridge mysql_shopdevgo # connect bridge to mysql_shopdevgo network
+    docker run --link mysql_shopdevgo:mysql_shopdevgo -p 8002:8002 backend_api
+
+    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysql
+    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' redis
+
+    docker start backend_shopdevgo # star backend_api if it's unhealthy
+    ```
+- `22`: Công ty đề nghị chuyển GORM sang SQLC như thế nào?
+
 ## Resource
 
 - [Con đường Lập Trình Viên](https://www.youtube.com/playlist?list=PLw0w5s5b9NK5fDx409WXgT06Zm4P83yiA)
