@@ -3,7 +3,9 @@ CREATE TABLE IF NOT EXISTS `products` (
 productId int PRIMARY KEY AUTO_INCREMENT,
 shopId int NOT NULL,
 FOREIGN KEY (shopId) REFERENCES shops (shopId),
-productName VARCHAR(255) NOT NULL
+productName VARCHAR(255) NOT NULL,
+productImage,
+productDescription VARCHAR(255) NOT NULL,
 );
 -- Tạo thêm một schema shops
 CREATE TABLE IF NOT EXISTS `shops`(

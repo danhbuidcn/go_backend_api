@@ -191,6 +191,7 @@ Golang Programming Course with Real Project CRM  eCommerce
 
     docker start backend_shopdevgo # star backend_api if it's unhealthy
     ```
+
 - `22`: Công ty đề nghị chuyển [GORM](https://gorm.io/index.html) sang [SQLC](https://sqlc.dev/) như thế nào?
     + command
     ```bash
@@ -200,7 +201,24 @@ Golang Programming Course with Real Project CRM  eCommerce
     go run cmd/main.go
     ```
 
-- `23`: Goose (A database migration tool) hiệu suất cao của dân BACKEND
+- `23`: [Goose](https://github.com/pressly/goose) (A database migration tool) hiệu suất cao của dân BACKEND
+    + Goose install: `go install github.com/pressly/goose/v3/cmd/goose@latest`
+    + Command:
+    ```bash
+    cd goose
+    go mod init example.com/goose-demo
+    goose --version
+
+    cd sql
+    goose/sql$ goose create order sql
+    goose/sql$ docker-compose up -d
+    goose/sql$ goose mysql "root:root@tcp(127.0.0.1:3308)/shopdevgo" up
+    goose/sql$ goose mysql "root:root@tcp(127.0.0.1:3308)/shopdevgo" down
+
+    cd ..
+    goose$ make down
+    goose$ make up
+    ```
 
 - `24`: [User Register Send OTP To Email Template](https://backend.anonystick.com/golang/go-24.html)
 
