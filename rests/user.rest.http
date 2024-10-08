@@ -1,0 +1,10 @@
+@basUrl=http://localhost:8002/v1
+
+### User Resgistration
+POST {{basUrl}}/user/register
+Content-Type: application/json
+
+{
+    "email": "other_email@gmail.com",
+    "purpose": "test"
+}

@@ -1,17 +1,19 @@
-FROM golang:alpine AS builder
+FROM golang:alpine
 
-WORKDIR /build
+# Cài đặt các công cụ cần thiết
+RUN apk add --no-cache git
 
+# Thiết lập thư mục làm việc
+WORKDIR /app
+
+# Copy toàn bộ mã nguồn vào container
 COPY . .
 
+# Tải xuống các dependencies của Go
 RUN go mod download
 
-RUN go build -o backend_api ./cmd/server
+# Expose port (nếu ứng dụng của bạn chạy trên một port cụ thể)
+EXPOSE 8002
 
-FROM scratch
-
-COPY ./config /config
-
-COPY --from=builder /build/backend_api /
-
-ENTRYPOINT ["/backend_api", "config/local.yaml"]
+# Sử dụng lệnh go run để phát triển mà không cần build lại toàn bộ
+CMD ["go", "run", "./cmd/server"]

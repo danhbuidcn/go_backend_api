@@ -4,10 +4,10 @@
 
 package model
 
-const TableNameGoCrmUser = "go_crm_user"
+const TableNameGoCrmUserV2 = "go_crm_user_v2"
 
-// GoCrmUser Account
-type GoCrmUser struct {
+// GoCrmUserV2 mapped from table <go_crm_user_v2>
+type GoCrmUserV2 struct {
 	UserID            int32  `gorm:"column:user_id;primaryKey;autoIncrement:true;comment:Account ID" json:"user_id"`                // Account ID
 	UserEmail         string `gorm:"column:user_email;not null;comment:Email" json:"user_email"`                                    // Email
 	UserPhone         string `gorm:"column:user_phone;not null;comment:Phone Number" json:"user_phone"`                             // Phone Number
@@ -22,7 +22,7 @@ type GoCrmUser struct {
 	UserStatus        bool   `gorm:"column:user_status;not null;comment:Status 1:enable, 0:disable, -1:deleted" json:"user_status"` // Status 1:enable, 0:disable, -1:deleted
 }
 
-// TableName GoCrmUser's table name
-func (*GoCrmUser) TableName() string {
-	return TableNameGoCrmUser
+// TableName GoCrmUserV2's table name
+func (*GoCrmUserV2) TableName() string {
+	return TableNameGoCrmUserV2
 }

@@ -41,6 +41,8 @@ services:
     container_name: backend_shopdevgo
     ports:
       - '8002:8002'
+    volumes:
+      - .:/app # Mount all source code from host into container
     depends_on:
       - mysql
       - redis
@@ -122,8 +124,8 @@ services:
   #     KAFKA_JMX_PASSWORD: mypassword
   #   volumes:
   #     - broker_data:/var/lib/kafka/data
-  #     - ./jmxremote.password:/usr/lib/jvm/zulu11-ca/conf/management/jmxremote.password
-  #     - ./jmxremote.access:/usr/lib/jvm/zulu11-ca/conf/management/jmxremote.access
+  #     - ./jmxremote.password:/user/lib/jvm/zulu11-ca/conf/management/jmxremote.password
+  #     - ./jmxremote.access:/user/lib/jvm/zulu11-ca/conf/management/jmxremote.access
   #   networks:
   #     - shopdev_network
 

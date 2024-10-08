@@ -1,16 +1,11 @@
 package repositories
 
-// type UserRepo struct{}
+import (
+	"fmt"
 
-// func NewUserRepo() *UserRepo {
-// 	return &UserRepo{}
-// }
-
-// func (ur *UserRepo) GetInfoUser() string {
-// 	return "string"
-// }
-
-// INTERFACE VERSION
+	"github.com/danhbuidcn/go_backend_api/global"
+	"github.com/danhbuidcn/go_backend_api/internal/model"
+)
 
 type IUserRepository interface {
 	GetUserByEmail(email string) bool
@@ -24,5 +19,9 @@ func NewUserRepoSitory() IUserRepository {
 
 // GetUserEmail implements IUserRepository
 func (*userRepository) GetUserByEmail(email string) bool {
-	panic("unimplement")
+	// SELECT * FROM user WHERE email = '?' ORDER BY email
+	row := global.Mdb.Table(TableNameGoCrmUser).Where("user_email = ?", email).First(&model.GoCrmUser{}).RowsAffected
+	fmt.Println("Email row:", row)
+
+	return row != NumberNull
 }

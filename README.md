@@ -132,22 +132,22 @@ Golang Programming Course with Real Project CRM  eCommerce
     DROP TABLE IF EXISTS `go_crm_user`;
     -- new
     CREATE TABLE `go_crm_user` (
-    `usr_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'Account ID',
-    `usr_email` varchar(30) NOT NULL DEFAULT '' COMMENT 'Email',
-    `usr_phone` varchar(15) NOT NULL DEFAULT '' COMMENT 'Phone Number',
-    `usr_username` varchar(30) NOT NULL DEFAULT '' COMMENT 'Username',
-    `usr_password` varchar(32) NOT NULL DEFAULT '' COMMENT 'Password',
-    `usr_created_at` int NOT NULL DEFAULT '0' COMMENT 'Creation Time',
-    `usr_updated_at` int NOT NULL DEFAULT '0' COMMENT 'Update Time',
-    `usr_create_ip_at` varchar(12) NOT NULL DEFAULT '' COMMENT 'Creation IP',
-    `usr_last_login_at` int NOT NULL DEFAULT '0' COMMENT 'Last Login Time',
-    `usr_last_login_ip_at` varchar(12) NOT NULL DEFAULT '' COMMENT 'Last Login IP',
-    `usr_login_times` int NOT NULL DEFAULT '0' COMMENT 'Login Times',
-    `usr_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Status 1:enable, 0:disable, -1:deleted',
-    PRIMARY KEY (`usr_id`),
-    KEY `idx_email` (`usr_email`),
-    KEY `idx_phone` (`usr_phone`),
-    KEY `idx_username` (`usr_username`)
+    `user_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'Account ID',
+    `user_email` varchar(30) NOT NULL DEFAULT '' COMMENT 'Email',
+    `user_phone` varchar(15) NOT NULL DEFAULT '' COMMENT 'Phone Number',
+    `user_username` varchar(30) NOT NULL DEFAULT '' COMMENT 'Username',
+    `user_password` varchar(32) NOT NULL DEFAULT '' COMMENT 'Password',
+    `user_created_at` int NOT NULL DEFAULT '0' COMMENT 'Creation Time',
+    `user_updated_at` int NOT NULL DEFAULT '0' COMMENT 'Update Time',
+    `user_create_ip_at` varchar(12) NOT NULL DEFAULT '' COMMENT 'Creation IP',
+    `user_last_login_at` int NOT NULL DEFAULT '0' COMMENT 'Last Login Time',
+    `user_last_login_ip_at` varchar(12) NOT NULL DEFAULT '' COMMENT 'Last Login IP',
+    `user_login_times` int NOT NULL DEFAULT '0' COMMENT 'Login Times',
+    `user_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Status 1:enable, 0:disable, -1:deleted',
+    PRIMARY KEY (`user_id`),
+    KEY `idx_email` (`user_email`),
+    KEY `idx_phone` (`user_phone`),
+    KEY `idx_username` (`user_username`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Account';
 
     DESC go_crm_user;
@@ -221,6 +221,23 @@ Golang Programming Course with Real Project CRM  eCommerce
     ```
 
 - `24`: [User Register Send OTP To Email Template](https://backend.anonystick.com/golang/go-24.html)
+    + [smtp](https://viblo.asia/p/smtp-la-gi-smtp-server-hoat-dong-nhu-the-nao-eW65GBaYlDO)
+    + [REST Client tool](https://codewithandrea.com/tips/rest-client-vscode/) to send requests
+    + command:
+    ```bash
+    cp .env.sample .env             // update your key
+    docker-compose down -v          // down and remove volume
+    docker-compose build --no-cache // Cần build lại mỗi lần thay đổi mã nguồn, nếu sử dụng scratch
+
+    docker-compose up
+    docker ps -a --filter "name=_shopdevgo"
+    docker logs backend_shopdevgo
+    docker exec -it backend_shopdevgo sh
+    ```
+    + [Using SendGrid's Go Library](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/v3-go-code-example)
+    + Setting sendgrid:
+        - app.sendgrid.com/settings/sender_auth/senders => tạo sender <your_email@gmail.com>
+        - Send request and view app.sendgrid.com/email_activity
 
 ## Resource
 

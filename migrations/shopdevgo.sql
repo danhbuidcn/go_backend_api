@@ -34,22 +34,22 @@ DROP TABLE IF EXISTS `go_crm_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `go_crm_user` (
-  `usr_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'Account ID',
-  `usr_email` varchar(30) NOT NULL DEFAULT '' COMMENT 'Email',
-  `usr_phone` varchar(15) NOT NULL DEFAULT '' COMMENT 'Phone Number',
-  `usr_username` varchar(30) NOT NULL DEFAULT '' COMMENT 'Username',
-  `usr_password` varchar(32) NOT NULL DEFAULT '' COMMENT 'Password',
-  `usr_created_at` int NOT NULL DEFAULT '0' COMMENT 'Creation Time',
-  `usr_updated_at` int NOT NULL DEFAULT '0' COMMENT 'Update Time',
-  `usr_create_ip_at` varchar(12) NOT NULL DEFAULT '' COMMENT 'Creation IP',
-  `usr_last_login_at` int NOT NULL DEFAULT '0' COMMENT 'Last Login Time',
-  `usr_last_login_ip_at` varchar(12) NOT NULL DEFAULT '' COMMENT 'Last Login IP',
-  `usr_login_times` int NOT NULL DEFAULT '0' COMMENT 'Login Times',
-  `usr_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Status 1:enable, 0:disable, -1:deleted',
-  PRIMARY KEY (`usr_id`),
-  KEY `idx_email` (`usr_email`),
-  KEY `idx_phone` (`usr_phone`),
-  KEY `idx_username` (`usr_username`)
+  `user_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'Account ID',
+  `user_email` varchar(30) NOT NULL DEFAULT '' COMMENT 'Email',
+  `user_phone` varchar(15) NOT NULL DEFAULT '' COMMENT 'Phone Number',
+  `user_username` varchar(30) NOT NULL DEFAULT '' COMMENT 'Username',
+  `user_password` varchar(32) NOT NULL DEFAULT '' COMMENT 'Password',
+  `user_created_at` int NOT NULL DEFAULT '0' COMMENT 'Creation Time',
+  `user_updated_at` int NOT NULL DEFAULT '0' COMMENT 'Update Time',
+  `user_create_ip_at` varchar(12) NOT NULL DEFAULT '' COMMENT 'Creation IP',
+  `user_last_login_at` int NOT NULL DEFAULT '0' COMMENT 'Last Login Time',
+  `user_last_login_ip_at` varchar(12) NOT NULL DEFAULT '' COMMENT 'Last Login IP',
+  `user_login_times` int NOT NULL DEFAULT '0' COMMENT 'Login Times',
+  `user_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Status 1:enable, 0:disable, -1:deleted',
+  PRIMARY KEY (`user_id`),
+  KEY `idx_email` (`user_email`),
+  KEY `idx_phone` (`user_phone`),
+  KEY `idx_username` (`user_username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Account';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -61,19 +61,19 @@ DROP TABLE IF EXISTS `go_crm_user_v2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `go_crm_user_v2` (
-  `usr_id` int NOT NULL AUTO_INCREMENT COMMENT 'Account ID',
-  `usr_email` longtext NOT NULL COMMENT 'Email',
-  `usr_phone` longtext NOT NULL COMMENT 'Phone Number',
-  `usr_username` longtext NOT NULL COMMENT 'Username',
-  `usr_password` longtext NOT NULL COMMENT 'Password',
-  `usr_created_at` int NOT NULL COMMENT 'Creation Time',
-  `usr_updated_at` int NOT NULL COMMENT 'Update Time',
-  `usr_create_ip_at` longtext NOT NULL COMMENT 'Creation IP',
-  `usr_last_login_at` int NOT NULL COMMENT 'Last Login Time',
-  `usr_last_login_ip_at` longtext NOT NULL COMMENT 'Last Login IP',
-  `usr_login_times` int NOT NULL COMMENT 'Login Times',
-  `usr_status` tinyint(1) NOT NULL COMMENT 'Status 1:enable, 0:disable, -1:deleted',
-  PRIMARY KEY (`usr_id`)
+  `user_id` int NOT NULL AUTO_INCREMENT COMMENT 'Account ID',
+  `user_email` longtext NOT NULL COMMENT 'Email',
+  `user_phone` longtext NOT NULL COMMENT 'Phone Number',
+  `user_username` longtext NOT NULL COMMENT 'Username',
+  `user_password` longtext NOT NULL COMMENT 'Password',
+  `user_created_at` int NOT NULL COMMENT 'Creation Time',
+  `user_updated_at` int NOT NULL COMMENT 'Update Time',
+  `user_create_ip_at` longtext NOT NULL COMMENT 'Creation IP',
+  `user_last_login_at` int NOT NULL COMMENT 'Last Login Time',
+  `user_last_login_ip_at` longtext NOT NULL COMMENT 'Last Login IP',
+  `user_login_times` int NOT NULL COMMENT 'Login Times',
+  `user_status` tinyint(1) NOT NULL COMMENT 'Status 1:enable, 0:disable, -1:deleted',
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -145,3 +145,4 @@ CREATE TABLE `go_user_roles` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-10-03  2:29:41
+
