@@ -281,3 +281,7 @@ Golang Programming Course with Real Project CRM  eCommerce
 ## Packages usefull
 
 - [godepgraph](https://github.com/alovn/godepgraph?tab=readme-ov-file): godepgraph is a packages dependency graph visualization tool for your local go module project.
+
+# Developer Interview
+
+- [Developer Interview](https://www.youtube.com/playlist?list=PLw0w5s5b9NK79nV6Ff5MPB0cmZjXD0lxY)
