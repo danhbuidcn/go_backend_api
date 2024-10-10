@@ -239,6 +239,25 @@ Golang Programming Course with Real Project CRM  eCommerce
         - app.sendgrid.com/settings/sender_auth/senders => tạo sender <your_email@gmail.com>
         - Send request and view app.sendgrid.com/email_activity
 
+- `25`: Loại đại ca GORM thay thế tân binh GOOSE vs SQLC hệ thống trở nên mạnh mẽ
+    + Command
+    ```bash
+    docker-compose up
+    docker ps --filter "name=_shopdevgo"
+    sudo chmod -R 777 internal/model/goose_db_version.gen.go
+
+    docker exec -it mysql_shopdevgo bash
+    bash# mysql -uroot -proot
+    mysql> use shopdevgo;
+    mysql> show tables;
+
+    goose -dir sql/schema create pre_go_crm_user_c sql
+    make upse
+
+    go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+    sqlc generate
+    ```
+
 ## Resource
 
 - [Con đường Lập Trình Viên](https://www.youtube.com/playlist?list=PLw0w5s5b9NK5fDx409WXgT06Zm4P83yiA)
