@@ -1,6 +1,8 @@
 package repositories
 
 import (
+	"fmt"
+
 	"github.com/danhbuidcn/go_backend_api/global"
 	"github.com/danhbuidcn/go_backend_api/internal/database"
 )
@@ -21,6 +23,7 @@ func NewUserRepoSitory() IUserRepository {
 
 // GetUserEmail implements IUserRepository
 func (up *userRepository) GetUserByEmail(email string) bool {
+	fmt.Printf("GetUserByEmail: %s", email)
 	user, err := up.sqlc.GetUserByEmailSQLC(ctx, email)
 	if err != nil {
 		return false

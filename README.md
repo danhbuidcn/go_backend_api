@@ -258,7 +258,14 @@ Golang Programming Course with Real Project CRM  eCommerce
     sqlc generate
     ```
 
--  `26`: Làm việc Microservices, go handler OTP, java send OTP to Aws
+- `26`: Làm việc Microservices, go handler OTP, java send OTP to Aws
+
+- `27`: Triển khai Kafka Microservices
+    + Command:
+    ```bash
+    docker-compose up
+    ```
+    + Tuy cập `http://localhost:8080` tạo topic `otp-auth-topic`
 
 ## Resource
 
