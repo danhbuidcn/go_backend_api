@@ -2,7 +2,6 @@ package services
 
 import (
 	"fmt"
-	"os"
 	"strconv"
 	"time"
 
@@ -61,9 +60,15 @@ func (us *userService) Register(email string, purpose string) int {
 		return response.ErrInvalidOTP
 	}
 
-	// 4.send email OTP
-	// make sure the email sent is valid
-	err = sendto.SendTextEmailOtp([]string{email}, os.Getenv("SENDER_EMAIL"), strconv.Itoa(otp))
+	// // 4.send email OTP
+	// // make sure the email sent is valid
+	// err = sendto.SendTextEmailOtp([]string{email}, os.Getenv("SENDER_EMAIL"), strconv.Itoa(otp))
+	// if err != nil {
+	// 	return response.ErrSendEmailOtp
+	// }
+
+	// Or 4.send OTP by JAVA
+	err = sendto.SendEmailToJavaByAPI(strconv.Itoa(otp), email, "otp-auth.html")
 	if err != nil {
 		return response.ErrSendEmailOtp
 	}
